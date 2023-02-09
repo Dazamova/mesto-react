@@ -21,10 +21,8 @@ export const Main = (props) => {
     getInfo()
   }, [])
 
-
   return (
     <main>
-
       <section className="profile">
         <div className="profile__avatar-container">
           <img className="profile__avatar" src={userAvatar} alt="аватар" onClick={props.onEditAvatar} />
