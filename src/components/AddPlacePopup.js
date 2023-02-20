@@ -21,13 +21,14 @@ export const AddPlacePopup = (props) => {
       image,
     });
   }
+
   return (
     <PopupWithForm name="add-card" heading="Новое место" buttonText="Создать" isOpen={props.isOpen} onClose={props.onClose} onSubmit={handleSubmit}>
       <>
-        <input id="place" type="text" name="place" className="popup__input popup__input_type_place" onChange={handleChangePlace} placeholder="Название"
+        <input id="place" value={place} type="text" name="place" className="popup__input popup__input_type_place" onChange={handleChangePlace} placeholder="Название"
           minLength="2" maxLength="30" required />
         <span className="popup__error popup__error_type_place"></span>
-        <input id="image" type="url" name="image" className="popup__input popup__input_type_image" onChange={handleChangeImage}
+        <input id="image" value={image} type="url" name="image" className="popup__input popup__input_type_image" onChange={handleChangeImage}
           placeholder="Ссылка на картинку" required />
         <span className="popup__error popup__error_type_image"></span>
       </>

@@ -2,18 +2,17 @@ import React from "react";
 import { PopupWithForm } from './PopupWithForm.js';
 
 export const EditAvatarPopup = (props) => {
-  const [avatar, setAvatar] = React.useState('');
   const avatarRef = React.useRef(null);
 
   function handleChange() {
-    setAvatar(avatarRef.current.value);
+    avatarRef.current.focus();
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
     props.onUpdateAvatar({
-      avatar: avatar,
+      avatar: avatarRef.current.value,
     });
   }
 

@@ -77,17 +77,24 @@ function App() {
     if (isLiked) {
       Api.dislike(card._id).then((newCard) => {
         setCards((state) => state.map((c) => c._id === card._id ? newCard : c))
+      }).catch(rej => {
+        console.log(rej)
       })
     } else {
       Api.like(card._id).then((newCard) => {
         setCards((state) => state.map((c) => c._id === card._id ? newCard : c))
+      }).catch(rej => {
+        console.log(rej)
       })
     }
   }
 
   function handleCardDelete(card) {
-    Api.deleteCard(card._id);
-    setCards(state => state.filter(c => c._id !== card._id)) //либо добавить в .then
+    Api.deleteCard(card._id).then(
+      setCards(state => state.filter(c => c._id !== card._id))
+    ).catch(rej => {
+      console.log(rej)
+    })
   }
 
   function handleUpdateUser(formData) {
