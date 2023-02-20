@@ -32,7 +32,7 @@ function ApiConstructor(config) {
       headers: config.headers,
       body: JSON.stringify({
         name: profile.name,
-        about: profile.aboutYourself,
+        about: profile.about,
       })
     }).then((res) => { return this.checkResponse(res) });
     // .then((data) => {
