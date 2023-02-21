@@ -3,7 +3,14 @@ import { PopupWithForm } from './PopupWithForm.js';
 
 export const AddPlacePopup = (props) => {
   const [place, setPlace] = React.useState('');
-  const [image, setImage] = React.useState('')
+  const [image, setImage] = React.useState('');
+
+  React.useEffect(() => {
+    if(props.isOpen){
+      setPlace('');
+      setImage('');
+    }
+  }, [props.isOpen])
 
   function handleChangePlace(e) {
     setPlace(e.target.value);

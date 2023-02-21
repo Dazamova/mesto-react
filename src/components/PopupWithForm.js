@@ -9,7 +9,6 @@ export const PopupWithForm = (props) => {
     }
   }, [props.isOpen])
 
-
   return (
     <div className={`popup popup_${props.name} ${props.isOpen ? 'popup_opened' : ''}`}>
       <div className={`popup__container popup__container_${props.name}`}>
